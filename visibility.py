@@ -39,4 +39,5 @@ class VisibiltyCalculator:
         :return: a list of (x, y) tuples in order to draw the polygon.
         """
         pos = _visibility.vec2(*view_point)
-        return _visibility.visible_polygon(pos, self.obstacles)
+        poly = _visibility.visible_polygon(pos, self.obstacles)
+        return [(p.x, p.y) for p in poly]

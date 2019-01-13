@@ -2,8 +2,8 @@ import sys
 import pybindgen
 
 def generate(file_):
-    mod = pybindgen.Module('mymodule')
-    mod.add_include('"my-module.hpp"')
+    mod = pybindgen.Module('_visibility')
+    mod.add_include('"visi.hpp"')
 
     vec2 = mod.add_struct('vec2')
     vec2.add_instance_attribute('x', 'float')
@@ -18,7 +18,7 @@ def generate(file_):
     mod.add_container('std::vector<segment>', 'segment', 'list')
     mod.add_container('std::vector<vec2>', 'vec2', 'list')
 
-    mod.add_function('MyModuleDoAction',
+    mod.add_function('visible_polygon',
                      pybindgen.retval('std::vector<vec2>'),
                      [
                          pybindgen.param('vec2', 'xy'),

@@ -5,6 +5,6 @@
 
 using namespace geometry;
 
-std::vector<vec2> MyModuleDoAction (vec2 xy, segmentList segments);
+std::vector<vec2> visible_polygon (vec2 xy, segmentList segments);
 
 #endif

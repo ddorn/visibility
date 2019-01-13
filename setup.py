@@ -7,13 +7,13 @@ try:
     os.mkdir("build")
 except OSError:
     pass
-module_fname = os.path.join("build", "my-module-binding.cpp")
+module_fname = os.path.join("build", "visibility-binding.cpp")
 with open(module_fname, "wt") as file_:
     print("Generating file {}".format(module_fname))
     generate(file_)
 
-mymodule = Extension('mymodule',
-                     sources = [module_fname, 'my-module.cpp'],
+mymodule = Extension('_visibility',
+                     sources = [module_fname, 'visi.cpp'],
                      include_dirs=['.'])
 
 setup(name='Visibility',
@@ -21,5 +21,6 @@ setup(name='Visibility',
       description='binding to trylock visibility algorithm',
       author='ddorn',
       ext_modules=[mymodule],
+      py_modules=['visibility']
      )
 

@@ -21,6 +21,7 @@ setup(name='Visibility',
       description='binding to trylock visibility algorithm',
       author='ddorn',
       ext_modules=[mymodule],
-      py_modules=['visibility']
+      py_modules=['visibility'],
+      install_requires=['pybindgen']
      )
 
